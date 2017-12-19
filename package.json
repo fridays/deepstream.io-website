@@ -1,6 +1,6 @@
 {
   "name": "deepstream.io-website",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "deepstream.io website",
   "main": "metalsmith.js",
   "scripts": {
