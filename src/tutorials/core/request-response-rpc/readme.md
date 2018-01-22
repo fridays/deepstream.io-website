@@ -51,11 +51,10 @@ Providers themselves are also able to reject requests (e.g. because they're unde
 //Limiting to 50 simultanious image resize tasks at a time
 var inProgress = 0;
 client.rpc.provide( 'resize-image', ( url, response ) => {
-    inProgress++;
-
     if( inProgress > 50 ) {
         response.reject();
     } else {
+        inProgress++;
         resizeImage( url ).then(() => {
             inProgress--;
             response.send( 'done' );
